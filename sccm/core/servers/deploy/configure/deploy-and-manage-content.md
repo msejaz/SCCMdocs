@@ -12,9 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 caps.latest.revision: 6
-author: Brendunsms.author: brendunsmanager: angrobe
+author: Brenduns
+ms.author: brenduns
+manager: angrobe
 ---
-# Deploy and manage content for System Center Configuration Manager*Applies to: System Center Configuration Manager (Current Branch)*
+# Deploy and manage content for System Center Configuration Manager
+
+*Applies to: System Center Configuration Manager (Current Branch)*
+
 After you install distribution points for System Center Configuration Manager, you can begin to deploy content to them. Typically, content transfers to distribution points across the network, but other options to get content to the distribution points exists. After content transfers to a distribution point, you can update, redistribute, remove, and validate that content on distribution points.  
 
 ##  <a name="bkmk_distribute"></a> Distribute content  
@@ -36,7 +41,7 @@ After you install distribution points for System Center Configuration Manager, y
 
 -   Task sequences  
 
-When you create a package that contains source files, such as an application deployment type or deployment package, the site on which the package is created becomes the site owner for the package content source. Configuration Manager copies the source files from the source file path that you specify for the object to the content library on the site server that owns the package content source.  Then, Configuration Manager replicates the information to additional sites. (See [The content library](../../../../core/plan-design/hierarchy/the-content-library.md) for more information about this.)  
+When you create a package containing source files, such as an application deployment type or deployment package, the site on which the package is created becomes the site owner for the package content source. Configuration Manager copies the source files from the source  path that you specify for the object to the content library on the site server that owns the package content source.  Then, Configuration Manager replicates the information to additional sites. (See [The content library](../../../../core/plan-design/hierarchy/the-content-library.md) for more information about this.)  
 
 Use the following procedure to distribute content to distribution points.  
 
@@ -105,7 +110,7 @@ Use the following procedure to distribute content to distribution points.
 
 -   When you import the prestaged content file on a site server, the content files are added to the content library on the site server, and then registered in the site server database.  
 
--   When you import the prestaged content file on a distribution point, the content files are added to the content library on the distribution point, and a status message is sent to the site server that informs the site that the content is available on the distribution point.  
+-   When you import the pre-staged content file on a distribution point, the content files are added to the content library on the distribution point, and a status message is sent to the site server that informs the site of the content's availability on the distribution point.  
 
 **Limitations and considerations for prestaged content:**  
 
@@ -159,7 +164,7 @@ Use the following sections to prestage content.
 
 7.  On the **Content** page, verify that the content listed is the content that you want to add to the prestaged content file, and then click **Next**.  
 
-8.  On the **Content Locations** page, specify the distribution points from which to retrieve the content files for the prestaged content file. You can select more than one distribution point to retrieve the content. The distribution points are listed in the Content locations section. The **Content** column displays how many of the selected packages or applications are available on each distribution point. Configuration Manager starts with the first distribution point in the list to retrieve the selected content, and then moves down the list in order to retrieve the remaining content required for the prestaged content file. Click **Move Up** or **Move Down** to change the priority order of the distribution points. When the distribution points in the list do not contain all of the selected content, you must add distribution points to the list that contain the content or exit the wizard, distribute the content to at least one distribution point, and then restart the wizard.  
+8.  On the **Content Locations** page, specify the distribution points from which to retrieve the content files for the prestaged content file. You can select more than one distribution point to retrieve the content. The distribution points are listed in the Content locations section. The **Content** column displays how many of the selected packages or applications are available on each distribution point. Configuration Manager starts with the first distribution point in the list to retrieve the selected content, and then moves down the list in order to retrieve the remaining content required for the prestaged content file. Click **Move Up** or **Move Down** to change the priority order of the distribution points. When the distribution points in the list do not contain all of the selected content, you must add distribution points to the list that contain the content or exit the wizard; you should distribute the content to at least one distribution point, and then restart the wizard.  
 
 9. On the **Summary** page, confirm the details. You can go back to previous pages and make changes. Click **Next** to create the prestaged content file.  
 
