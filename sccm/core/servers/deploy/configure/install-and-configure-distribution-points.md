@@ -20,7 +20,7 @@ manager: angrobe
 
 *Applies to: System Center Configuration Manager (Current Branch)*
  
-You install System Center Configuration Manager distribution points to host the content (files and software) that you deploy to devices and users. You can also create distribution point groups that simplify how you manage distribution points, and how you distribute content to distribution points.  
+You install System Center Configuration Manager distribution points to host the content (files and software applications) that you deploy to devices and users. You can also create distribution point groups that simplify how you manage distribution points, and how you distribute content to them.  
 
  When you *install a new distribution point* (by using the installation wizard) or *manage the properties of an existing distribution point* (by editing the distribution point's properties), you can configure most of the distribution point settings. A few settings are available only when you're either installing or editing, but not both:  
 
@@ -43,7 +43,7 @@ You install System Center Configuration Manager distribution points to host the 
 ##  <a name="bkmk_install"></a> Install a distribution point  
  You must designate a site system server as a distribution point before content can be made available to client computers. You can add the distribution point site role to a new site system server or add the site role to an existing site system server.  
 
- When you install a new distribution point, you use an installation wizard that walks you through the available settings. Before you start, consider the following:  
+ When you install a new distribution point, an installation wizard walks you through the available settings. Before you start, consider the following:  
 
 -   You must have the following security permissions to create and configure a distribution point:  
 
@@ -102,7 +102,7 @@ Use the following basic procedures to install or change a distribution point. Fo
 
 -   If you add a distribution point to the distribution point group after an initial content distribution, Configuration Manager automatically distributes the content to the new distribution point member.  
 
--   You can associate a collection with a distribution point group. When you distribute content to that collection, Configuration Manager determines which distribution point groups are associated with the collection. The content is then distributed to all distribution points that are members of those distribution point groups.  
+-   You can associate a collection with a distribution point group. When you distribute content to that collection, Configuration Manager determines which distribution point groups are associated with that particular collection. The content is then distributed to all distribution points that are members of those distribution point groups.  
 
     > [!NOTE]  
     >  After you distribute content to a collection, if you then associate the collection with a new distribution point group, you must redistribute the content to the collection before the content is distributed to the new distribution point group.  
@@ -183,7 +183,7 @@ The following sections describe the configurations that you can select when you'
     >   
     >  When you deploy a Windows Installer application on a Configuration Manager client, Configuration Manager downloads the file to the local cache on the client. The files are eventually removed after the installation finishes.
     >  
-    >  The Configuration Manager client updates the Windows Installer source list for the installed Windows Installer applications with the content path for the content library on associated distribution points. Later, if you start the repair action from Add or Remove Programs on a Configuration Manager client, MSIExec attempts to access the content path by using an anonymous user.  
+    >  The Configuration Manager client updates the Windows Installer source list for the installed Windows Installer applications with the content path for the content library on associated distribution points. Later, if you start the repair action from Add or Remove Programs on a Configuration Manager client, MSIExec attempts to access the content path by using an anonymous user profile.  
     >   
     >  However, you can install the update described in Microsoft Knowledge Base article [2619572](http://go.microsoft.com/fwlink/?LinkId=279699) and then modify a registry key to change this behavior.  
     >   
@@ -225,7 +225,7 @@ Specify the drive settings for the distribution point. You can configure up to t
 
 -   **Drive space reserve (MB)**: The value that you configure for this setting determines the amount of free space on a drive before Configuration Manager chooses a different drive and continues the copy process to that drive. Content files can span multiple drives.  
 
--   **Content Locations**: Specify the content locations for the content library and package share. Configuration Manager copies content to the primary content location until the amount of free space reaches the value specified for **Drive space reserve (MB)**. By default, the content locations are set to **Automatic**. The primary content location is set to the disk drive that has the most disk space at installation, and the secondary location is assigned to the disk drive that has the second-most free disk space. When the primary and secondary drives reach the drive space reserve, Configuration Manager selects another available drive with the most free disk space and continues the copy process.  
+-   **Content Locations**: Specify the content locations for the content library and package share. Configuration Manager copies content to the primary content location until the amount of free space reaches the value specified for **Drive space reserve (MB)**. By default, the content locations are set to **Automatic**. The primary content location is set to the disk drive that has the most disk space at the time of installation, and the secondary location is assigned to the disk drive that has the second-most free disk space. When the primary and secondary drives reach the drive space reserve, Configuration Manager selects another available drive with the most free disk space and continues the copy process.  
 
 > [!NOTE]  
 >  To prevent Configuration Manager from installing on a specific drive, create an empty file named **no_sms_on_drive.sms** and copy it to the root folder of the drive before you install the distribution point.  
