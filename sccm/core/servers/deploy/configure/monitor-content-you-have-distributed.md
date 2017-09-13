@@ -62,9 +62,7 @@ When you cancel a deployment that is not yet complete, the distribution job to t
 >  When a deployment is near completion, it is possible the action to cancel that distribution will not process before the distribution to the distribution point completes. When this occurs, the action to cancel the deployment is ignored, and the status for the deployment displays as successful.  
 
 > [!NOTE]  
->  Although you can select the option to cancel a distribution to a distribution point that is located on a site server, this has no effect. This is because the site server and the distribution point on a site server share the same single instance content store. There is no actual distribution job to cancel.  
-
-When you redistribute content that previously failed to transfer to a distribution point, Configuration Manager immediately begins redeploying that content to the distribution point. Configuration Manager updates the status of the deployment to reflect the ongoing state of that redeployment.  
+>  Although you can select the option to cancel a distribution to a distribution point that is located on a site server, this has no effect. This is because the site server and the distribution point on a site server share the same single instance content store. There is no actual distribution job to cancel. But when you redistribute content that previously failed to transfer to a distribution point, Configuration Manager immediately begins redeploying that content to the distribution point. Configuration Manager updates the status of the deployment to reflect the ongoing state of that redeployment.  
 
 Use the following procedures to view content status, and manage distributions that remain in progress or that failed.  
 
@@ -107,8 +105,8 @@ The **Distribution Point Group Status** node in the **Monitoring** workspace pro
 
 -   The distribution point group name.  
 -   The description.  
--   How many distribution points are members of the distribution point group.  
--   How many packages have been assigned to the group.  
+-   The count of distribution points that are members of the distribution point group.  
+-   The count of packages assigned to the group.  
 -   The distribution point group status.  
 -   The compliance rate.  
 
